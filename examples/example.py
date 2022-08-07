@@ -1,8 +1,3 @@
-# benchfuncs
-
-benchfuncs offers a selection of benchmark functions that can be used to test optimisation algorithms. It is implemented in numpy but a torch wrapper allows the use with torch optimisers as well.
-
-```python
 from benchfuncs import Sphere
 from simplelhs import LatinHypercubeSampling
 from scipy import minimize
@@ -29,4 +24,3 @@ results = minimize(noisy_sphere, x0, method='L-BFGS-B')
 # compare solution with global minimum
 print("Solution: ", results["x"], results["fun"])
 print("Optimum: ", noisy_sphere.optimum["inputs"], noisy_sphere.optimum["output"])
-```
