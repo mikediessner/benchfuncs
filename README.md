@@ -1,4 +1,4 @@
-# benchfuncs
+# IN DEVELOPMENT: benchfuncs
 
 The `benchfuncs` package offers a selection of benchmark functions that can be used to test optimisation algorithms. It is implemented in numpy but a torch wrapper allows convenient use with torch optimisers as well.
 
