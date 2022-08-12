@@ -7,3 +7,4 @@ from .rastrigin import Rastrigin
 from .levy import Levy
 from .sumsquares import SumSquares
 from .zakharov import Zakharov
+from .dixonprice import DixonPrice
