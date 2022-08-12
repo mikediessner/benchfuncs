@@ -6,3 +6,4 @@ from .schwefel import Schwefel
 from .rastrigin import Rastrigin
 from .levy import Levy
 from .sumsquares import SumSquares
+from .zakharov import Zakharov
