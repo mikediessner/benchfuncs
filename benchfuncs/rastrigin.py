@@ -15,7 +15,7 @@ class Rastrigin(BenchmarkFunction):
     def __call__(self, x: np.array):
         
         # compute output
-        y = 10*self.dims + np.sum(x**2 - 10*np.cos(2*np.pi*x))
+        y = 10.0*self.dims + np.sum(x**2 - 10.0*np.cos(2.0*np.pi*x))
 
         # turn into maximisation problem
         if not self.minimise:

@@ -12,16 +12,16 @@ class Ackley(BenchmarkFunction):
         self.noise = noise
         self.minimise = minimise
 
-        self.a = 20
+        self.a = 20.0
         self.b = 0.2
-        self.c = 2*np.pi
+        self.c = 2.0*np.pi
 
     def __call__(self, x: np.array):
         
         # compute output
         term_1 = -self.a * np.exp(-self.b * np.sqrt(np.mean(x**2, axis=1)))
         term_2 = -np.exp(np.mean(np.cos(self.c * x), axis=1))
-        y = term_1 + term_2 + self.a + np.exp(1)
+        y = term_1 + term_2 + self.a + np.exp(1.0)
 
         # turn into maximisation problem
         if not self.minimise:

@@ -17,7 +17,7 @@ class Griewank(BenchmarkFunction):
         
         # compute output
         ii = np.arange(1, self.dims+1)
-        y = np.sum(x**2/4000, axis=1) - np.prod(np.cos(x / np.sqrt(ii)), axis=1) + 1
+        y = np.sum(x**2/4000.0, axis=1) - np.prod(np.cos(x / np.sqrt(ii)), axis=1) + 1
 
         # turn into maximisation problem
         if not self.minimise:
