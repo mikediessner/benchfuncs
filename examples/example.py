@@ -1,26 +1,25 @@
 from benchfuncs import Sphere
-from simplelhs import LatinHypercubeSampling
-from scipy import minimize
+import numpy as np
+from scipy.optimize import minimize
 
 
 # define benchmark function
-noisy_sphere = Sphere(dims=2, noise=0.01)
+func = Sphere(dims=4)
 
-# sample training data via a Latin Hypercube
-lhs = LatinHypercubeSampling(noisy_sphere.dims)
-x = lhs.random(10)
+# sample training data for modelling
+x = np.random.uniform(low=func.bounds[:, 0], high=func.bounds[:, 1], size=(3, func.dims))
 
 # get training data outpus
-y = noisy_sphere(x)
+y = func(x)
 
 # print results
 print("Inputs: ", x)
 print("Outputs: ", y)
 
 # optimise benchmark function
-x0 = np.random.uniform()
-results = minimize(noisy_sphere, x0, method='L-BFGS-B')
+x0 = np.random.uniform(low=func.bounds[:, 0], high=func.bounds[:, 1], size=func.dims)
+results = minimize(func, x0, method='L-BFGS-B', bounds=func.bounds)
 
 # compare solution with global minimum
-print("Solution: ", results["x"], results["fun"])
-print("Optimum: ", noisy_sphere.optimum["inputs"], noisy_sphere.optimum["output"])
+print(f"Solution: \t Inputs: {results['x']}, \t Output: {results['fun']}")
+print(f"Optimum: \t Inputs: {func.optimum['inputs']} \t Output: {func.optimum['output']}")
