@@ -6,7 +6,7 @@ from scipy.optimize import minimize
 # define benchmark function
 func = Sphere(dims=4)
 
-# sample training data for modelling
+# sample training data
 x = np.random.uniform(low=func.bounds[:, 0], high=func.bounds[:, 1], size=(3, func.dims))
 
 # get training data outpus
